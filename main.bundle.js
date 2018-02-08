@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"col-md-4\">\n  <app-chart [data]=\"savingChart\" [set]=\"savingSet\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\">\n  </app-chart>\n</div>\n<div class=\"col-md-4\">\n  <app-chart [data]=\"ecpmChart\" [set]=\"ecpmSet\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\">\n  </app-chart>\n</div>\n<div class=\"col-md-4\">\n  <app-chart [data]=\"winRateChart\" [set]=\"winRateSet\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\">\n  </app-chart>\n</div>\n<br>\n<br>\n<table class=\"table\">\n  <tr>\n    <th>Day</th>\n    <th>Saving $</th>\n    <th>Saving %</th>\n    <th>with True Price</th>\n    <th>w/o True Price</th>\n    <th>with True Price</th>\n    <th>w/o True Price</th>\n    <th>eCPM with True Price</th>\n    <th>eCPM w/o True Price</th>\n    <th>Win Rate with True Price</th>\n    <th>Win Rate w/o True Price</th>\n    <th>YesBids</th>\n  </tr>\n  <tr *ngFor=\"let i of data.data\">\n    <td *ngFor=\"let key of i | keys\">{{i[key]}}</td>\n  </tr>\n</table>\n\n<br>\n<br>\n<br>\n<pre>{{ data | json}}</pre>"
+module.exports = "<div class=\"col-md-4\">\n  <app-chart [data]=\"savingChart\" [set]=\"savingSet\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\">\n  </app-chart>\n</div>\n<div class=\"col-md-4\">\n  <app-chart [data]=\"ecpmChart\" [set]=\"ecpmSet\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\">\n  </app-chart>\n</div>\n<div class=\"col-md-4\">\n  <app-chart [data]=\"winRateChart\" [set]=\"winRateSet\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\">\n  </app-chart>\n</div>\n<br>\n<br>\n<table class=\"table\">\n  <tr>\n    <th>Day</th>\n    <th>Saving %</th>\n    <th>Saving $</th>\n    <th>with True Price</th>\n    <th>w/o True Price</th>\n    <th>with True Price</th>\n    <th>w/o True Price</th>\n    <th>eCPM with True Price</th>\n    <th>eCPM w/o True Price</th>\n    <th>Win Rate with True Price</th>\n    <th>Win Rate w/o True Price</th>\n    <th>YesBids</th>\n  </tr>\n  <tr *ngFor=\"let i of data.data\">\n    <td *ngFor=\"let key of i | keys\">{{i[key]}}</td>\n  </tr>\n</table>\n\n<br>\n<br>\n<br>\n<pre>{{ data | json}}</pre>"
 
 /***/ }),
 
@@ -231,7 +231,7 @@ var AppComponent = /** @class */ (function () {
                 responsive: true,
                 title: {
                     display: true,
-                    text: 'True Ptice Savings'
+                    text: 'True Price Savings'
                 },
                 tooltips: {
                     mode: 'index',
@@ -254,7 +254,7 @@ var AppComponent = /** @class */ (function () {
             labels: [],
             datasets: [{
                     type: 'line',
-                    label: 'Saving %',
+                    label: 'eCPM with True Price',
                     borderColor: "#76a346",
                     borderWidth: 2,
                     fill: false,
@@ -262,7 +262,7 @@ var AppComponent = /** @class */ (function () {
                     data: []
                 }, {
                     type: 'line',
-                    label: 'Saving $',
+                    label: 'eCPM w/o True Price',
                     yAxisID: 'B',
                     backgroundColor: "#1fc8f8",
                     data: [],
@@ -301,7 +301,7 @@ var AppComponent = /** @class */ (function () {
             labels: [],
             datasets: [{
                     type: 'line',
-                    label: 'Saving %',
+                    label: 'Win Rate with True Price',
                     borderColor: "#76a346",
                     borderWidth: 2,
                     fill: false,
@@ -309,7 +309,7 @@ var AppComponent = /** @class */ (function () {
                     data: []
                 }, {
                     type: 'line',
-                    label: 'Saving $',
+                    label: 'Win Rate w/o True Price',
                     yAxisID: 'B',
                     backgroundColor: "#1fc8f8",
                     data: [],
